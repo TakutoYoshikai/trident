@@ -1,0 +1,11 @@
+#!/bin/bash
+
+matched=($(grep -r "[0-9a-zA-Z]\{16\}" . -o))
+cd `dirname $0`
+for r in "${matched[@]}"
+do
+  result=`python ~/Desktop/randomness.py ${r##*:}`
+  if [ "$result" != "" ]; then
+    echo ${r%%:*} $result
+  fi
+done
