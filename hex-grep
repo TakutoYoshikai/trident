@@ -1,0 +1,8 @@
+#!/bin/bash
+
+matched=($(grep -r "[0-9a-fA-F]\{${1}\}" . -o))
+cd `dirname $0`
+for r in "${matched[@]}"
+do
+  echo $r
+done
