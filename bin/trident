@@ -1,5 +1,15 @@
 #!/bin/bash
 
+if [ "$1" = "email" ]; then
+  trident-email
+  exit
+fi
+
+if [ "$1" = "hex" ]; then
+  trident-hex $2
+  exit
+fi
+
 matched=($(grep -r "[0-9a-zA-Z]\{${1}\}" . -o -I))
 cd `dirname $0`/..
 for r in "${matched[@]}"
