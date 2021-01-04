@@ -8,7 +8,7 @@ def char_type(ch):
         return "upper"
     if ch.isdigit():
         return "digit"
-    return "other"
+    return ch
 
 
 def randomness(string):
