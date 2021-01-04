@@ -1,6 +1,7 @@
 from statistics import mean, median,variance,stdev
 import math
 import sys
+
 def char_type(ch):
     if ch.islower():
         return "lower"
@@ -32,7 +33,10 @@ def randomness(string):
 
 
 if __name__ == "__main__":
-    if randomness(sys.argv[1]) < float(sys.argv[2]):
+    threshold = 0.1
+    if len(sys.argv) == 3:
+        threshold = float(sys.argv[2])
+    if randomness(sys.argv[1]) < threshold:
         print(sys.argv[1])
 
 
