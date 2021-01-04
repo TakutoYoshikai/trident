@@ -14,7 +14,6 @@ def char_type(ch):
 def randomness(string):
     n = 0
     previous = None
-    stat = []
     counts = {}
     types = []
     for i in range(len(string)):
@@ -23,16 +22,6 @@ def randomness(string):
         if ch not in counts:
             counts[ch] = 0
         counts[ch] += 1
-        if previous is None:
-            n += 1
-        elif previous != char_type(ch):
-            stat.append(n)
-            n = 1
-        else:
-            n += 1
-        if i == len(string) - 1:
-            stat.append(n)
-        previous = char_type(ch)
     types = list(set(types))
     if len(types) < 3:
         return 1
