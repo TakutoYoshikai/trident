@@ -1,6 +1,6 @@
 #!/bin/bash
 
-matched=($(grep -r "[0-9a-zA-Z]\{${1}\}" . -o))
+matched=($(grep -r "[0-9a-zA-Z]\{${1}\}" . -o -I))
 cd `dirname $0`/..
 for r in "${matched[@]}"
 do
