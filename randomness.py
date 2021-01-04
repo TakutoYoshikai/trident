@@ -13,8 +13,6 @@ def char_type(ch):
 
 
 def randomness(string):
-    n = 0
-    previous = None
     counts = {}
     types = []
     for i in range(len(string)):
