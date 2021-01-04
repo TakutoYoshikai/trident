@@ -1,0 +1,3 @@
+#!/bin/bash
+
+grep -r -E "[-_a-zA-Z0-9\.+]+@[-a-zA-Z0-9\.]+" . -o -I
