@@ -43,7 +43,7 @@ def randomness(string):
 
 
 if __name__ == "__main__":
-    if randomness(sys.argv[1]) < 0.1:
+    if randomness(sys.argv[1]) < float(sys.argv[2]):
         print(sys.argv[1])
 
 
