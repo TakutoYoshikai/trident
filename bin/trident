@@ -11,7 +11,12 @@ if [ "$1" = "hex" ]; then
 fi
 
 if [ "$1" = "config" ]; then
-  trident-config $2
+  trident-config
+  exit
+fi
+
+if [ "$1" = "hidden" ]; then
+  trident-hidden
   exit
 fi
 
