@@ -10,6 +10,11 @@ if [ "$1" = "hex" ]; then
   exit
 fi
 
+if [ "$1" = "config" ]; then
+  trident-config $2
+  exit
+fi
+
 matched=($(grep -r "[0-9a-zA-Z]\{${1}\}" . -o -I))
 cd `dirname $0`/..
 for r in "${matched[@]}"
