@@ -24,7 +24,7 @@ matched=($(grep -r "[0-9a-zA-Z]\{${1}\}" . -o -I))
 cd `dirname $0`/..
 for r in "${matched[@]}"
 do
-  result=`python ./randomness.py ${r##*:} $2`
+  result=`python3 ./randomness.py ${r##*:} $2`
   if [ "$result" != "" ]; then
     echo ${r%%:*} $result
   fi
